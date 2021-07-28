@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended: true}));
 
 // connection to db
 mongoose.set("useFindAndModify", false );
-mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser: true}, 
+mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser: true, useUnifiedTopology: true}, 
     ()=>{
     console.log("Connected to db")
     
@@ -31,7 +31,9 @@ app.set("view engine","ejs");
 
 // adding get method
 app.get('/', (req, res)=>{
-    res.render('todo.ejs')
+    TodoTask.find({}, (err, tasks)=>{
+        res.send("todo.ejs", {todoTasks: tasks});
+    });
     
 });
 
