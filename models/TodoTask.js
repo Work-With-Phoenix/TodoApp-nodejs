@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const todoTaskSchema = new mongoose.Schema({
     content:{
         type:String, 
-        required:true
+        required: true
     },
     date:{
-        type:Date,
-        default:Date.now
+        type: Date,
+        default: Date.now
     }
 
 })
