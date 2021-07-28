@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 // require model
 const TodoTask = require('./models/TodoTask');
 
+
 dotenv.config();
 
 
@@ -48,6 +49,24 @@ app.post('/',async (req,res)=>{
     }catch(err){
         res.redirect("/");
     }
+});
+
+// update
+app
+.route("/edit/:id")
+
+.get((req, res)=>{
+const id = req.params.id;
+TodoTask.find({}, (err, tasks)=>{
+    res.render("todoEdit.ejs", { todoTasks: tasks, idTask: id });
+});
+})
+.post((req, res)=>{
+    const id = req.params.id;
+    TodoTask.findByIdAndUpdate(id, {content:req.body.content}, err=>{
+        if(err) return res.send(500, err);
+        res.redirect("/")
+    });
 });
 
 
