@@ -3,6 +3,9 @@ const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
+// require model
+const TodoTask = require('./models/TodoTask');
+
 dotenv.config();
 
 
@@ -23,8 +26,16 @@ app.get('/', (req, res)=>{
 });
 
 // post method
-app.post('/', (req,res)=>{
-    console.log(req.body);
+app.post('/',async (req,res)=>{
+    const todoTask = new TodoTask({
+        content: req.body.content
+    });
+    try{ 
+        await todoTask.save();
+        res.redirect("/");
+    }catch(err){
+        res.redirect("/");
+    }
 });
 
 // connection to db
