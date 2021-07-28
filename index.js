@@ -30,9 +30,9 @@ mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser: true, useUnifiedTopol
 app.set("view engine","ejs");
 
 // adding get method
-app.get('/', (req, res)=>{
+app.get('/', (req, res) =>{
     TodoTask.find({}, (err, tasks)=>{
-        res.send("todo.ejs", {todoTasks: tasks});
+        res.render("todo.ejs", {todoTasks: tasks});
     });
     
 });
