@@ -5,7 +5,7 @@ const app = express();
 app.use('/static', express.static('public'))
 
 // esj view - engine configuration
-app.set('view engine', 'ejs')
+app.set("view engine","ejs");
 
 // adding get response
 app.get('/', (req, res)=>{

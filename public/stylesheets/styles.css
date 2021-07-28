@@ -1,0 +1,95 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background: #e27442;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.todo-container{
+    display:flex;
+    position: absolute;
+    width: 800px;
+    padding: 20px;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    flex-direction: column;  
+    align-items: center; 
+    border-radius: 20px;
+}
+.todo{
+    width:400px;
+}
+.todo-header{
+    display: flex;
+}
+.todo-header input{
+    width: 92%;
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+    padding: 20px;
+
+}
+.todo-header button{
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background:rgb(0, 81, 255);
+    padding: 5px 7px;
+    color: white;
+    margin-left: .7rem;
+}
+.todo-header ul{
+    list-style: none;
+}
+.todo-list-item{
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Candal', sans-serif;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: row;
+}
+.todo-list-item form {
+    width: 100%;
+    display: flex;
+}
+.todo-list-item input {
+    flex-grow: 2;
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Candal', sans-serif;
+}
+.todo-list-item .cancel {
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    font-family: 'Candal', sans-serif;
+    background-color: rgb(223, 43, 43);
+    margin-left: 5px;
+}
+.todo-list-item div {
+    flex-grow: 2;
+}
+.todo-list-item .edit { 
+    color : rgb(143, 233, 58);
+    margin-right: 10px;
+    cursor:pointer;
+    text-decoration: none;
+}
+.todo-list-item .remove {
+    color : rgb(243, 96, 96);
+    margin-right: 5px;
+    cursor:pointer;
+    text-decoration: none;
+}
