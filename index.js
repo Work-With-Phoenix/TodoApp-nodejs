@@ -68,5 +68,12 @@ TodoTask.find({}, (err, tasks)=>{
         res.redirect("/")
     });
 });
-
+// delete
+app.route('/remove/:id').get((req, res)=>{
+    const id = req.params.id;
+    TodoTask.findByIdAndRemove(id, err =>{
+        if(err) return res.send(500, err);
+        res.redirect("/")
+    });
+});
 
