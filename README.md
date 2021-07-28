@@ -1,2 +1,2 @@
 ### Todo App Nodejs
-this is a todo application created using nodejs, expressjs and mongodb
+This is a Todo application created using Node.js, Express.js and MongoDB
