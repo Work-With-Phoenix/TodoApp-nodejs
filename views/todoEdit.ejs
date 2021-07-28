@@ -19,19 +19,19 @@
             </form>
 
             <ul class="todo-list">
-                <% todoTasks.forEach(details)=>{ %> 
+                <% todoTasks.forEach(details =>{ %> 
                     <% if(details._id == idTask) { %> 
                         <li class="todo-list-item">
-                            <form action="/edit/<%= details._id %> " method="POST">
-                            <input type="text" value="<% details.content %> " name="content">
+                            <form action="/edit/<%= details._id %>" method="POST">
+                            <input type="text" value="<%= details.content %> " name="content">
                             <button type="submit">confirm</button>
                             <a href="/" class="cancel">Cancel</a>
                             </form>
                         </li>
-                        <% } else{ %> 
+                        <% } else { %> 
                             <li class="todo-list-item">
                                 <div class="todo-list-item-name">
-                                    <% details.content %> 
+                                    <%= details.content %> 
                                 </div>
                                 <a href="/edit/<%= details._id %>" class="edit">
                                      <span class="fas fa-edit"></span>
